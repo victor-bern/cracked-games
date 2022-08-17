@@ -16,7 +16,6 @@ const App: React.FC = () => {
       `https://cracked-api.azurewebsites.net/search/${game}`
     );
     setGames(data);
-    console.log(data);
   };
   return (
     <ThemeProvider theme={theme}>
@@ -32,7 +31,6 @@ const App: React.FC = () => {
           <TouchableHighlight
             onPress={() => {
               getGames();
-              console.log(game);
               setGame("");
             }}
           >
