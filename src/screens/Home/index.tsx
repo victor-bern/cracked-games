@@ -5,15 +5,15 @@ import { StatusBar, TouchableHighlight } from "react-native";
 import GameList from "../../components/GamesList";
 import Game from "../../models/Game";
 import axios from "axios";
+import { getGames } from "../../services/gameService";
 
 const Home: React.FC = () => {
   const [game, setGame] = useState("");
   const [games, setGames] = useState<Game[]>([]);
-  const getGames = async () => {
-    const { data } = await axios.get<Game[]>(
-      `https://cracked-api.azurewebsites.net/search/${game}`
-    );
-    setGames(data);
+  const handleGetGames = async () => {
+    const games = await getGames(game);
+    setGames(games);
+    setGame("");
   };
   return (
     <Container>
@@ -30,13 +30,7 @@ const Home: React.FC = () => {
           onChangeText={setGame}
           value={game}
         />
-        <TouchableHighlight
-          testID={"button-search"}
-          onPress={() => {
-            getGames();
-            setGame("");
-          }}
-        >
+        <TouchableHighlight testID={"button-search"} onPress={handleGetGames}>
           <IoIcons name="search" size={34} />
         </TouchableHighlight>
       </SearchContainer>
