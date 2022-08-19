@@ -24,8 +24,14 @@ const Home: React.FC = () => {
         hidden={false}
       />
       <SearchContainer>
-        <GameInput onChangeText={setGame} value={game} />
+        <GameInput
+          testID={"input"}
+          placeholder="Insert game name"
+          onChangeText={setGame}
+          value={game}
+        />
         <TouchableHighlight
+          testID={"button-search"}
           onPress={() => {
             getGames();
             setGame("");

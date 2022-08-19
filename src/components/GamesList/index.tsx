@@ -16,6 +16,7 @@ const GameList: React.FC<
   return (
     <Container>
       <FlatList
+        testID={"list"}
         data={list}
         renderItem={renderItem}
         keyExtractor={(item) => item.name}
