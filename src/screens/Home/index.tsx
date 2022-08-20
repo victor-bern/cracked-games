@@ -5,7 +5,7 @@ import { StatusBar, TouchableHighlight } from "react-native";
 import GameList from "../../components/GamesList";
 import Game from "../../models/Game";
 import axios from "axios";
-import { getGames } from "../../services/gameService";
+import { getGames } from "../../services/GameService";
 
 const Home: React.FC = () => {
   const [game, setGame] = useState("");
