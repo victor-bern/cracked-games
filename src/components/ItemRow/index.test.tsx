@@ -29,6 +29,18 @@ describe("ItemRow components", () => {
     expect(itemImage).toBeTruthy();
   });
 
+  it("Game image should have 670x120 of dimensions", () => {
+    render(
+      <ThemeProvider theme={theme}>
+        <ItemRow item={mockedItemGame} />
+      </ThemeProvider>
+    );
+    const itemImage = screen.getByTestId("item-image");
+
+    expect(itemImage.props.style[0].width).toBe(670);
+    expect(itemImage.props.style[0].height).toBe(120);
+  });
+
   it("game status should have a background color #a0ca7e when status is 'cracked'", () => {
     const mockedGame: Game = {
       name: "teste",
