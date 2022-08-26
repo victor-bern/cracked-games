@@ -1,7 +1,8 @@
 import { PropsWithChildren } from "react";
 import { FlatList } from "react-native";
 import Game from "../../models/Game";
-import ItemRow from "../ItemRow";
+import { ItemRow } from "../ItemRow";
+
 import { Container } from "./styles";
 
 const GameList: React.FC<

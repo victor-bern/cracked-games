@@ -10,6 +10,7 @@ export const ItemRow: React.FC<
   return (
     <Container>
       <GameImage
+        testID={"item-image"}
         source={{
           uri: item.image,
         }}
@@ -19,5 +20,3 @@ export const ItemRow: React.FC<
     </Container>
   );
 };
-
-export default ItemRow;
